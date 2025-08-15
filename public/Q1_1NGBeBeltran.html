@@ -9,8 +9,28 @@
   <label for="numPerDay">Number Per Day:</label>
   <input type="numPerDay" id="fnumPerDay" name="fNumPerDay"><br><br>
 
-  <input type="submit" value="Submit">
+<p id="result"> Result : </p>
+  <input type="submit" value="Submit" onclick= "getData()">
+<body>
+    <script>
+function getData() {
+    let age = document.getElementById("fage").value;
+    let maxAge = document.getElementById("fmaxAge").value;
+    let numPerDay = document.getElementById("fnumPerDay").value;
+    let totalRequired = (numPerDay * 365) * (maxAge - age);
+    
+    if(confirm(`Is ${age}, ${maxAge}, and ${numPerDay} correct?`)) {
+        document.getElementById("result").innerHTML = "You will need " + totalRequired + " of your favorite snack to last you until the ripe old age of " + maxAge;
+    } else {
+        document.write("Run the code again");
+    }
+    }
+
+    </script>
   
+
+
+</html>
 <script>
     /*
     let age = window.prompt("How old are you?", "14");
